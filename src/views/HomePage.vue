@@ -63,15 +63,16 @@
           </d-sub-menu>
         </d-menu>
       </d-aside>
-      <d-content class="main-content">Content
+      <d-content class="main-content">
         {{ selectedMenu }}
+        <router-view></router-view>
       </d-content>
     </d-layout>
     <d-footer class="dfooter">Footer</d-footer>
   </d-layout>
 
   <!--   <d-slider :min="0" :max="480" v-model="width"></d-slider> -->
-  <router-view></router-view>
+  
 </template>
 
 <script setup>
