@@ -5,20 +5,20 @@
     >
     <d-layout>
       <d-aside class="daside">
-        <d-menu mode="vertical" :default-select-keys="['item1']" width="256px" router>
-          <d-menu-item key="item1" @select="selectM">
-            <template #icon>
-              <i class="icon-homepage"></i>
-            </template>
-            <span>Home</span>
-          </d-menu-item>
+        <d-menu mode="vertical" :default-select-keys="['calpage']" width="256px"  @select="selectM">
           <d-menu-item key="item1">
             <template #icon>
               <i class="icon-homepage"></i>
             </template>
             <span>Home</span>
           </d-menu-item>
-          <d-menu-item key="item1">
+          <d-menu-item key="calpage">
+            <template #icon>
+              <i class="icon-homepage"></i>
+            </template>
+            <span>Calulator</span>
+          </d-menu-item>
+          <d-menu-item key="item3">
             <template #icon>
               <i class="icon-homepage"></i>
             </template>
@@ -63,8 +63,7 @@
           </d-sub-menu>
         </d-menu>
       </d-aside>
-      <d-content class="main-content">
-        {{ selectedMenu }}
+      <d-content class="main-content" style="border:1px solid">
         <router-view></router-view>
       </d-content>
     </d-layout>
@@ -76,7 +75,10 @@
 </template>
 
 <script setup>
-
+    // import {router} from 'vue'
+    const selectM = (a) => {
+        console.log(a)
+    }
 </script>
 
 <style>

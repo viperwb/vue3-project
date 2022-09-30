@@ -9,6 +9,10 @@ const  routes = [
         path: "/stockpage",
         component: () => import("../views/StockPage.vue")
     },
+    {
+        path: "/calpage",
+        component: () => import("../views/CalPage.vue")
+    },
     /* {
         path: "/404",
         component: () => import("../views/ErrorPage.vue")
