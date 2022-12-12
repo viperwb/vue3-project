@@ -6,7 +6,7 @@
     <d-layout>
       <d-aside class="daside">
         <d-menu mode="vertical" :default-select-keys="['calpage']" width="256px"  @select="selectM">
-          <d-menu-item key="item1">
+          <d-menu-item key="">
             <template #icon>
               <i class="icon-homepage"></i>
             </template>
@@ -18,11 +18,11 @@
             </template>
             <span>Calulator</span>
           </d-menu-item>
-          <d-menu-item key="item3">
+          <d-menu-item key="stockpage">
             <template #icon>
               <i class="icon-homepage"></i>
             </template>
-            <span>Home</span>
+            <span>StockPage</span>
           </d-menu-item>
           <d-menu-item key="item1">
             <template #icon>
@@ -73,13 +73,23 @@
   <!--   <d-slider :min="0" :max="480" v-model="width"></d-slider> -->
   
 </template>
-
-<script setup>
-    // import {router} from 'vue'
-    const selectM = (a) => {
-        console.log(a)
+<script>
+import { useRouter } from 'vue-router'
+  export default {
+    setup () {
+      let router = useRouter()
+      const selectM = (a) => {
+        console.log(a.key)
+        console.log(router)
+        router.push('/'+a.key)
     }
+    return {
+      selectM
+    }
+    }
+  }
 </script>
+
 
 <style>
 </style>
